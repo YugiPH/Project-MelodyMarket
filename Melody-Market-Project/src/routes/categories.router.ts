@@ -1,23 +1,10 @@
-// import CategoryController from "@controllers/categories.controller";
-// import express, { Request, Response, Router } from "express";
+import express, { Request, Response, Router } from "express";
+import CategoryController from "@controllers/categories.controller";
 
+const router: Router = express.Router();
 
-// const router: Router = express.Router();
+router.get("/categories", (req: Request, res: Response) => {
+    CategoryController.getAllCategories(req, res);
+});
 
-// router.get('/category', (req: Request, res: Response) => {
-//     CategoryController.getAllCategories(req, res);
-// });
-
-// router.post('/category/create', (req: Request, res: Response) => {
-//     CategoryController.createCategory(req, res);
-// });
-
-// router.put('/category/:id/edit', (req: Request, res: Response) => {
-//     CategoryController.editCategory(req, res);
-// });
-
-// router.delete('/category/:id/delete', (req: Request, res: Response) => {
-//     CategoryController.deleteCategory(req, res);
-// });
-
-// export default router;
+export default router;
