@@ -17,6 +17,10 @@ import commentRouter from '@routes/comment.router'
 import adminUsersRouter from '@routes/admin.router/adminUsers.router'
 import adminSalesRouter from '@routes/admin.router/adminSales.router'
 import adminProductsRouter from '@routes/admin.router/adminProducts.router'
+import adminPermissionRouter from '@routes/admin.router/adminPermission.router'
+import adminOrdersRouter from '@routes/admin.router/adminOrders.router'
+import adminCouponRouter from '@routes/admin.router/adminCoupon.router'
+import adminCategoriesRouter from '@routes/admin.router/adminCategories.router'
 
 import bodyParser from "body-parser";
 
@@ -47,7 +51,8 @@ AppDataSource.initialize().then(() => {
 
 app.use("/", userRouter, productRouter, orderRouter, momoRouter,
   noteRouter, detail_ordersRouter, deliveryRouter, commentRouter,
-  categoryRouter, adminUsersRouter, adminSalesRouter, adminProductsRouter)
+  categoryRouter, adminUsersRouter, adminSalesRouter, adminProductsRouter,
+  adminPermissionRouter, adminOrdersRouter, adminCouponRouter, adminCategoriesRouter)
 
 app.listen(port, () => {
   console.log(`[server]: Server is running at http://localhost:${port}`);

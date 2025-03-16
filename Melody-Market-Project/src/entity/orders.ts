@@ -3,6 +3,7 @@ import { Users } from "./users";
 import { Payment } from "./payments";
 import { Note } from "./note";
 import { Detail_Order } from "./order_details";
+import { Coupon } from "./coupon";
 
 @Entity()
 export class Order {
@@ -33,8 +34,8 @@ export class Order {
     @Column()
     freeship?: number;
 
-    @Column()
-    id_coupon?: string;
+    @ManyToOne(() => Coupon, (coupon) => coupon.orders, { nullable: true })
+    id_coupon?: Coupon;
 
     @Column("datetime")
     create_time?: Date;
